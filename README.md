@@ -23,7 +23,7 @@
 
 * Step 6  - Select Script Editor from the menu ribbon and rename the Google Project
 
-	![Screenshot of the Google Sheet menu selecting Tools then Script Editor...](https://raw.githubusercontent.com/PatrickLeonard/GoogleFormSubmissionEmail/e41213ca6a7670ee10291573b421673b44648e23/Screen%20Prints/06-Select_Script_Editor.png)
+	![Screenshot of the Google Sheet menu selecting Tools then Script Editor...](https://raw.githubusercontent.com/PatrickLeonard/GoogleFormSubmissionEmail/e0a6c238d6cf572833b092b56c6ab2bb2e5beda6/Screen%20Prints/06-Select_Script_Editor.png)
 
 * Step 7  - Paste the Google Script code into the new script editor window and modify as needed for the variable amount of columns/questions
 
