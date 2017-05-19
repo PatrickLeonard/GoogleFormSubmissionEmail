@@ -102,12 +102,13 @@ function sendOffTheEmail(timeStamp,multipleChoice, shortAnswer, checkbox, linear
 * Uses the first sheet and gets only the last row
 * @param {SpreadSheet} ss The current Google Spreadsheet accepting form submissions
 * @param {integer} numColumns The total number of columns in the Spreadsheet
+* @return {Array.<Object>} two-dimensional array Object[][], the data within the row
 */
 function getFormData(ss,numColumns) {
   var sheet = ss.getSheets()[0]; //Get the first "Sheet" in the SpreadSheet
   var startRow = sheet.getLastRow();  // First row of data to process in script 
   var numRows = 1;   // Number of rows to process, get the last row entered on submission
-  return getDataRange(sheet,startRow,numRows,numColumns).getValues(); //Get the values in a twoDimensional array Object[][]
+  return getDataRange(sheet,startRow,numRows,numColumns).getValues(); //Get the values in a two-dimensional array Object[][]
 }
 
 /**
@@ -115,6 +116,7 @@ function getFormData(ss,numColumns) {
 * the email on form submission
 * @param {SpreadSheet} ss The current Google Spreadsheet accepting form submissions
 * @param {integer} numColumns The total number of columns in the Spreadsheet
+* @return {Array.<Object>} two-dimensional array Object[][], the data within the row
 */
 function getEmailDataRange(ss,numColumns) {
   var sheet = ss.getSheets()[1]; //Get the second "Sheet" in the SpreadSheet
@@ -129,6 +131,7 @@ function getEmailDataRange(ss,numColumns) {
 * Always use the first column.
 * @param {Sheet} sheet The current Google Sheet within the Spreadsheet accepting form submissions
 * @param {integer} numColumns The total number of columns in the Spreadsheet
+* @return {Array.<Object>} two-dimensional array Object[][], the data within the row
 */
 function getDataRange(sheet,startRow,numRows,numColumns) {
   var startColumn = 1;
@@ -141,7 +144,7 @@ function getDataRange(sheet,startRow,numRows,numColumns) {
 * This function gathers the email addresses that are on the second sheet of the SpreadSheet
 * Returns comma separated list of emails with one email in each cell of the first column in the
 * second sheet.
-*
+* @return {string} Email addresses in a comma separated string format
 */
 function getEmailAddresses() {
   var dataRange = getEmailDataRange(SpreadsheetApp.getActiveSpreadsheet(),1); //One Column
